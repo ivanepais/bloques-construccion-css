@@ -8,6 +8,54 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <h1>Capitulo 2: Bloques de construcción</h1>
+    <header>
+            <h1>Capitulo 2: Bloques de construcción</h1>
+    </header>
+    
+
+    <main>
+        <article>
+            <h2>Cascada y herencia</h2>
+            <p>Controlan como se aplica el CSS al HTML</p>
+            <h3>Reglas conflictivas:</h3>
+            <p>Por lo general, son varias reglas aplicadas a un mismo elemento; hacen que el resultado no sea el esperado.</p>
+            <p>La cascada y la especificidad controlan que regla se aplica en este conflicto. La herencia significa que algunas propiedades del elemento padre se heredan (a los elementos hijos) pero otras no.</p>
+            <h4>Cascada</h4>
+            <p>Cuando dos reglas tienen la misma especificidad, se aplica la que aparece ultima: Es decir, tener un <strong>selector idéntico</strong></p>
+            <h4>Especificidad</h4>
+            <p>Cuando tenemos selectores diferentes que podrían aplicarse a un mismo elemento. Si un elemento es mas especifico que otro se aplicará este a pesar que este antes en la hoja de estilo.</p>
+            <h4>Herencia (inheritance)</h4>
+            <p>A los elementos que estén dentro de el se le aplicaran las mismas propiedades, pero a otros no. No se heredara propiedades si el elemento hijo tiene las suyas.</p>
+            <p>Los bordes, los margenes, el relleno y la anchara no se heredan en una ul, por sentido comun.</p>
+            <p><strong>Ver Referencia</strong> de cada propiedad para ver cuales son heredables</p>
+            <h3>Control de la herencia: Valores</h3>
+            <p></p>
+            <h4>inherit</h4>
+            <p>Es un valor permitido en todas las propiedades CSS. Hace que el elemento al cual se aplica tome el valor calculado de la propiedad de su elemento padre.</p> 
+            <p>Si hay un elemento hijo con la misma especificidad se aplicará las que tenga definida y en orden a la cascada.</p>   
+            <h4>initial</h4>
+            <p>ES un valor que se puede aplicar a un elemento seleccionado tenga el mismo valor que esté establecido para esa propiedad en la hoja de estilo por defecto del navegador. Fuerza la utilizacion del valor inicial de la propiedad para el elemento seleccionado.</p>
+            <h4>unset</h4>
+            <p></p>
+            <h4>revert</h4>
+            <p></p>
+
+            <h3>Cascada en detalle</h3>
+            <p>La cascada es un algoritmo que define como combinar los valores de las propiedades en las hojas de estilo. Como una cascada, se aplicará al documento (html, xml, etc) de la ultima hacia la primera regla en general, aunque hay casos particulares. </p>
+            <p>Solo las reglas con par propiedad/valor participan de la cascada, significa que las reglas de CSS distintas o que respondan a otro algoritmo que no sea el de CSS no participaran.</p>
+            <p>Hay declaraciones como pueden ser algunas de las reglas (at-rules) como @font-face que contiene descriptores. Declaraciones mas conocidas como @media, @document o @supports; si participarán de la cascada.</p>
+            <h4>At-rules</h4>
+            <p>Es una declaración que comienza con el signo @ seguido del nombre de la regla.</p>
+            <p>Hay reglas con distintas sintaxis y reglas con una misma sintaxis pero que funcionan mediante condiciones.
+            <p></p>
+            <h4>Orden de la cascada</h4>
+            <p>La cascada determina como va a encontrar el valor que se aplicará a cada propiedad de cada elemento.</p>
+            <p>Primero clasifica las reglas que se permiten en la cascada (con par propiedad/valor y que responden al algoritmo de la cascada de CSS), luego clasifica las reglas de acuerdo a su importancia y luego por su origen (tipo de hoja de estilo: cliente, autor y usuario), estas hojas determinan la prioridad: 3) cliente, 2) autor; 1) usuario. El autor puede modificar la hoja del cliente y el usuario puede modificar la hoja del autor.</p>
+            <p>En de igualdad entre las reglas, la especificidad elige el orden en el cual se aplicará el CSS.</p>
+
+
+        </article>
+</main>
+
 </body>
 </html>
