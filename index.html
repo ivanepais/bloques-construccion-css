@@ -49,11 +49,22 @@
             <p>Si hay mas de una regla con el mismo peso/especificidad gana la ultima.</p>
             <h4>Especificidad</h4>
             <p>Cuando se aplica una regla anterior es porque esta es mas especifica que la ultima.</p>
-            <p>No se sobrescribe toda la reglas, solo las propiedades. Una practica común es dar estilo a elementos básicos y después crear clases para cambiar otras propiedades a estas clases. El estilo genérico se aplica a todos los elementos y el de las clases solo a elementos particulares, estos van a recibir las propiedades que no se hayan sobrescrito.</p>
+            <p>No se <strong>sobrescribe</strong> toda la reglas, solo las <strong>propiedades</strong> que entran en conflicto de especificidad/valor. Una practica común es dar estilo a elementos básicos y después crear clases para cambiar otras propiedades del elemento. El estilo genérico se aplica a todos los elementos y el de las clases solo a elementos particulares, estos van a recibir las propiedades que no se hayan sobrescrito con mayor especificidad.</p>
+            <p><strong>Ejemplo:</strong> A un selector genérico le ponemos color rojo y fuente Helvetica y a un selector de clase le ponemos color azul sin cambiar la fuente, este recibirá la fuente Helvetica pero cambiará el color azul.</p>
             <h4>Calculo de la especificidad</h4>
-            <p></p>
-
-
+            <p>Un selector genérico o pseudo elemento suma 1 punto, un selector de clase suma 10 puntos, un selector de id suma 100, un atributo style en HTML suma de 1000 puntos; pero la declaración !importan al lado de un valor le gana a todos los selectores.</p>
+            <h4>declaración !important</h4>
+            <p>La unica manera de anularla es escribiendo otro !important al valor de la propiedad que se quiere aplicar.</p>
+            <p>Aunque esta declaración no se utiliza a menos que no puedas acceder a modificar los nodos (elementos, texto, etc.) del CSS.</p>
+            <h4>Efecto de la ubicación del CSS</h4>
+            <p>Declaraciones contradictorias se aplicaran en el siguiente orden:</p>
+            <ol>
+                <li>Declaraciones en las hojas de estilo del cliente/navegador</li>
+                <li>Declaraciones en las hojas de estilo del usuario web</li>
+                <li>Declaraciones en las hojas de estilo del desarrollador web</li>
+                <li>Declaraciones !important en las hojas de estilo del desarrollador</li>
+                <li>Declaraciones !important en las hojas de estilo del usuario web</li>
+            </ol>
 
             <h3>Cascada en detalle</h3>
             <p>La cascada es un algoritmo que define como combinar los valores de las propiedades en las hojas de estilo. Como una cascada, se aplicará al documento (html, xml, etc) de la ultima hacia la primera regla en general, aunque hay casos particulares. </p>
